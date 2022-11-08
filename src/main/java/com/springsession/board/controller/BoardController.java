@@ -11,13 +11,11 @@ import org.springframework.web.bind.annotation.ResponseBody;
 @Controller
 public class BoardController {
 
-    @Autowired
-    private BoardService boardService;
+    private final BoardService boardService;
 
-//    @Autowired
-//    public BoardController(BoardService boardService) {
-//        this.boardService = boardService;
-//    }
+    public BoardController(BoardService boardService) {
+        this.boardService = boardService;
+    }
 
     @GetMapping("/board/write") //localhost:8080/board/write
     public String main() {

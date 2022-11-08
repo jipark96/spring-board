@@ -8,13 +8,12 @@ import org.springframework.stereotype.Service;
 @Service
 public class BoardService {
 
-    @Autowired // 알아서 읽어오게함
-    private BoardRepository boardRepository;
 
-//    @Autowired
-//    public  BoardService(BoardRepository boardRepository) {
-//        this.boardRepository = boardRepository;
-//    }
+    private final BoardRepository boardRepository;
+
+    public  BoardService(BoardRepository boardRepository) {
+        this.boardRepository = boardRepository;
+    }
 
     public void write(Board board) {
 
