@@ -39,7 +39,7 @@ table.type02 td {
   border-bottom: 1px solid #ccc;
 }
 input {
-    width: 300px;
+    width: 250px;
     height: 32px;
     font-size: 15px;
     border: 0;
@@ -49,14 +49,14 @@ input {
     background-color: rgb(233, 233, 233);
     }
 button {
-    margin: 15px;
+    margin: 10px;
     }
 
     .w-btn {
     position: relative;
     border: none;
     display: inline-block;
-    padding: 15px 30px;
+    padding: 15px 25px;
     border-radius: 15px;
     font-family: "paybooc-Light", sans-serif;
     box-shadow: 0 15px 35px rgba(0, 0, 0, 0.2);
@@ -98,6 +98,7 @@ button {
   <form th:action="@{/board/list}" method="get">
     <input type="text" name="searchKeyword">
     <button class="w-btn w-btn-indigo" type="submit">검색</button>
+    <button class="w-btn w-btn-indigo" type="button" onclick="location.href='/board/write'">글 작성</button>
   </form>
 </div>
 
