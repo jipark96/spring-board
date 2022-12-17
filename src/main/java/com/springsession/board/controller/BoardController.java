@@ -24,14 +24,14 @@ public class BoardController {
     }
 
     @GetMapping("/board/write") //localhost:8080/board/write
-    public String main() {
+    public String boardWrite() {
         return "boardwrite";
     }
 
     @PostMapping("/board/writepro")
     public String boardWritePro(Board board) {
         boardService.write(board);
-        return "";
+        return "redirect:/board/list";
     }
 
     @GetMapping("/board/list")

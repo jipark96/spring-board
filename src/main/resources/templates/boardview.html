@@ -1,13 +1,57 @@
 <!DOCTYPE html>
 <html lang="en" xmlns:th="http://www.thymeleaf.org">
 <head>
+  <style>
+   .pad-left1 {
+   padding-left : 300px;
+   }
+   .pad-left2 {
+   padding-left : 500px;
+   }
+    p {
+    min-height: 150px;
+    overflow: auto;
+    width:400px;
+    border: 0;
+    border-radius: 15px;
+    outline: none;
+    padding-left: 10px;
+    background-color: rgb(233, 233, 233);
+    }
+
+    button {
+    margin: 10px;
+    }
+
+    .w-btn {
+    position: relative;
+    border: none;
+    display: inline-block;
+    padding: 15px 30px;
+    border-radius: 15px;
+    font-family: "paybooc-Light", sans-serif;
+    box-shadow: 0 15px 35px rgba(0, 0, 0, 0.2);
+    text-decoration: none;
+    font-weight: 600;
+    transition: 0.25s;
+    }
+
+    .w-btn-indigo {
+    background-color: aliceblue;
+    color: #1e6b7b;
+    }
+  </style>
   <meta charset="UTF-8">
   <title>게시글 상세페이지</title>
 </head>
 <body>
+<div class ="pad-left1">
 <h1 th:text="${board.title}">제목입니다.</h1>
 <p th:text="${board.content}">내용이 들어갈 부분입니다.</p>
-<a th:href="@{/board/delete(id=${board.id})}">글 삭제</a>
-<a th:href="@{/board/modify/{id}(id=${board.id})}">글 수정</a>
+</div>
+<div class="pad-left2">
+<button class="w-btn w-btn-indigo" th:onclick="|location.href='@{/board/delete(id=${board.id})}'|">삭제</button>
+<button class="w-btn w-btn-indigo" th:onclick="|location.href='@{/board/modify/{id}(id=${board.id})}'|">수정</button>
+</div>
 </body>
 </html>
